@@ -1,0 +1,1 @@
+9999999999{"name": "room", "version": "0.1.11", "summary": "A framework of stream data maining for smart home", "platform": "UNKNOWN", "requires_dist": ["chainer", "numpy", "pymongo", "pyzmq", "tornado", "pypandoc", "pytz", "python-dateutil"], "requires_python": null, "files": [], "_cache_version": "1.0.0"}
