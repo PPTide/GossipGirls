@@ -69,7 +69,8 @@ class FurnitureTurtle(turtle.Turtle):
         # Check if a drawing function is set and is callable
         if not (self.drawFunc and callable(self.drawFunc)):
             turtle.TK.messagebox.showerror(
-                title="Error", message="Error moving turtle have you set a draw function"
+                title="Error",
+                message="Error moving turtle have you set a draw function",
             )
             return
 
@@ -95,7 +96,7 @@ def rotatePoint(p, rotation):
     :return: rotated point
     """
     # Convert the rotation to radians
-    rotation = math.radians(rotation-90)
+    rotation = math.radians(rotation - 90)
     # Calculate the sine and cosine of the rotation
     sin = math.sin(rotation)
     cos = math.cos(rotation)
@@ -113,15 +114,19 @@ def createFurniture(name, points, namePos=(0, 0)):
         turtle.addHitbox(points)
         turtle.penup()
         # Rotate Points
-        rotated_points = [(0,0) for _ in points]
+        rotated_points = [(0, 0) for _ in points]
         for i, p in enumerate(points):
             rotated_points[i] = rotatePoint(p, turtle.rotation)
         rotated_name_pos = rotatePoint(namePos, turtle.rotation)
         # Move to the position for the name and write the name
-        turtle.goto(rotated_name_pos[0] + turtle.baseX, rotated_name_pos[1] + turtle.baseY)
+        turtle.goto(
+            rotated_name_pos[0] + turtle.baseX, rotated_name_pos[1] + turtle.baseY
+        )
         turtle.write(name, align="center")
         # Move to the first point of the shape
-        turtle.goto(rotated_points[0][0] + turtle.baseX, rotated_points[0][1] + turtle.baseY)
+        turtle.goto(
+            rotated_points[0][0] + turtle.baseX, rotated_points[0][1] + turtle.baseY
+        )
         turtle.pendown()
         # Draw the shape by moving to each point in the list
         for p in rotated_points:

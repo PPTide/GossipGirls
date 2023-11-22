@@ -54,20 +54,19 @@ t1.setDrawFunc(
     createFurniture(
         "Bett",
         [
-            (0, 0),
-            (0, -20),
-            (0, -20),
-            (40, -20),
-            (40, 0),
-            (0, 0),
+            (-50, 25),
+            (50, 25),
+            (50, -25),
+            (-50, -25),
+            (-50, 25),
         ],
-        namePos=(20, -20),
+        namePos=(0, 0),
     )
 )
 turtles.append(t1)
 
 # t1.move(-20, -20)
-t1.move(-300, -200, True)
+t1.move(-300, -250, True)
 
 t2 = FurnitureTurtle()
 
@@ -76,20 +75,20 @@ t2.setDrawFunc(
     createFurniture(
         "Schrank",
         [
-            (0, 0),
-            (50, 0),
-            (50, -30),
-            (0, -30),
-            (0, 0),
+            (-40, 20),
+            (40, 20),
+            (40, -20),
+            (-40, -20),
+            (-40, 20),
         ],
-        namePos=(25, -25),
+        namePos=(0, 0),
     )
 )
-t2.move(-100, 0)
+t2.move(-100, 0, True)
 turtles.append(t2)
 
 # t2.move(20, 20)
-t2.move(-200, -200, True)
+t2.move(-200, -250, True)
 
 t3 = FurnitureTurtle()
 
@@ -98,19 +97,20 @@ t3.setDrawFunc(
     createFurniture(
         "Stuhl",
         [
-            (0, 0),
-            (20, 0),
-            (20, -20),
-            (0, -20),
-            (0, 0),
+            (-15, 15),
+            (15, 15),
+            (15, -15),
+            (-15, -15),
+            (-15, 15),
         ],
+        namePos=(0, 0),
     )
 )
-t3.move(-300, 0)
+t3.move(-300, 0, True)
 turtles.append(t3)
 
 # t3.move(-20, -20)
-t3.move(0, -200, True)
+t3.move(50, -250, True)
 
 t4 = FurnitureTurtle()
 
@@ -118,20 +118,15 @@ t4.color("blue")
 t4.setDrawFunc(
     createFurniture(
         "Kühlschrank",
-        [
-            (20, 20),
-            (0, 20),
-            (0, 0),
-            (20, 0),
-            (20, 20),
-        ],
+        [(-20, 20), (-20, -20), (20, -20), (20, 20), (-20, 20)],
+        namePos=(0, 0),
     )
 )
 t4.move(-300, 0)
 turtles.append(t4)
 
 # t4.move(-20, -20)
-t4.move(-50, -200, True)
+t4.move(0, -250, True)
 
 t = FurnitureTurtle()
 
@@ -140,19 +135,20 @@ t.setDrawFunc(
     createFurniture(
         "Tisch",
         [
-            (20, 20),
-            (20, -40),
-            (-20, -40),
-            (-20, 20),
-            (20, 20),
+            (-40, 80),
+            (40, 80),
+            (40, -80),
+            (-40, -80),
+            (-40, 80),
         ],
+        namePos=(0, 0),
     )
 )
-t.move(-300, 0)
+t.move(-300, 0, True)
 turtles.append(t)
 
 # t.move(-20, -20)
-t.move(-100, -200, True)
+t.move(-100, -250, True)
 
 tuerenUndFenster()
 
@@ -194,7 +190,7 @@ Funktion to call on click
                 selected = i
 
         if (
-              selected <= 4
+            selected <= 4
         ):  # Wählt nur die Objekte aus, die sich als erste oder als zweites im Programm befinden
             cloneTurtleAndSelect(closest)
         else:
