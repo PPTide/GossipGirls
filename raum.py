@@ -32,23 +32,32 @@ def drawRoom():
     t.getscreen().update()
 
 
-def fenster_malen():
+def fenster_malen(t):
   color = t.color()
   t.setheading(t.rotation)
-  t.penup()
+  t.pendown()
+  t.color("white")
   t.right(90)
   t.fd(40)
   t.right(90)
-  t.pendown()
+  t.color(color[0])
   t.fd(5)
-  t.right(180)
+  t.right(90)
+  t.color("white")
+  t.fd(80)
+  t.right(90)
+  t.color(color[0])
   t.fd(2.5)
-  t.right(270)
+  t.right(90)
+  t.fd(80)
+  t.right(180)
   t.fd(80)
   t.right(90)
   t.fd(2.5)
-  t.right(180)
-  t.fd(5)
+  t.right(90)
+  t.color("white")
+  t.fd(40)
+  t.color(color[0])
   
 
 def tueren_malen(t):
@@ -93,13 +102,17 @@ def tuerenUndFenster():
             tuer = dw.DoorAndWindowTurtle()
             tuer.setDrawFunc(tueren_malen)
             turtles.append(tuer)
+            tuer.move(-100, -145)
 
     anzahl_fenster = int(
         turtle.numinput("Fenster", "Wie viele Fenster willst du platzieren?")
     )
     if anzahl_fenster >= 0:
         for i in range(anzahl_fenster):
-            fenster_malen()
+            fenster = dw.DoorAndWindowTurtle()
+            fenster.setDrawFunc(fenster_malen)
+            turtles.append(fenster)
+            fenster.move(0, -145)
     else:
         print("Nur positive Zahlen!!!")
 
