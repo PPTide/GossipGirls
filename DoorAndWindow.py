@@ -18,10 +18,9 @@ class DoorAndWindowTurtle(ft.FurnitureTurtle):
             x = 220
             self.rotation = 180
         else:
-          # wenn es nicht im Raum platziert, öffnet ein Error Fenster
-          turtle.TK.messagebox.showerror(
-              title="Out of bounds",
-              message="Das Objekt wurde außerhalb des Raums platziert.",
-          )
-          return
+            turtle.TK.messagebox.showerror(
+                title="Out of bounds",
+                message="Das Objekt wurde außerhalb des Raums platziert.",
+            )
+            return
         super().move(x, y)

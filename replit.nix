@@ -1,5 +1,6 @@
 { pkgs }: {
   deps = [
+    pkgs.lazygit
     pkgs.systemdMinimal
     pkgs.python310Full
     pkgs.replitPackages.stderred
